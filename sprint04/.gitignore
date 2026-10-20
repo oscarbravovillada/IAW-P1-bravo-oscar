@@ -1,7 +1,0 @@
-.env
-.env.*
-!.env.example
-*.pem
-*.key
-secrets/
-config.local.php

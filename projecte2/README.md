@@ -1,8 +1,8 @@
 # Projecte 2 · Administració de WordPress amb WP-CLI
 
-Oscar Bravo Villada · IAW · PorçonsTech
+**Oscar Bravo Villada · IAW · PorçonsTech**
 
-Aquest projecte l'he fet en una instància d'AWS amb Ubuntu 24.04, Apache, PHP 8.3 i MariaDB. Com que a `/var/www/html` ja hi havia una altra aplicació PHP (add.php, edit.php, etc.), he instal·lat WordPress en una subcarpeta, `/var/www/html/wordpress`, i totes les ordres `wp` les he executat des d'ahí. La versió de WordPress és la 7.1.4 i la de WP-CLI la 2.12.0.
+Aquest projecte l'he fet en una instància d'AWS amb Ubuntu 24.04, Apache, PHP 8.3 i MariaDB. Com que a `/var/www/html` ja hi havia una altra aplicació PHP (`add.php`, `edit.php`, etc.), he instal·lat WordPress en una subcarpeta, `/var/www/html/wordpress`, i totes les ordres `wp` les he executades des d'ahí. La versió de WordPress és la 7.1.4 i la de WP-CLI la 2.12.0.
 
 Les captures estan a la carpeta `imatges/`.
 
@@ -14,7 +14,7 @@ Les captures estan a la carpeta `imatges/`.
 
 ![E1 wp --info](imatges/wpinfo.png)
 
-WP-CLI és una eina per a administrar WordPress des del terminal. A la primera captura es veu com el descarrego amb `curl`, li done permisos d'execució i el moc a `/usr/local/bin/wp`. A la segona, `wp --info` mostra que funciona i que detecta PHP 8.3.6 i MariaDB 10.11.
+WP-CLI és una eina per a administrar WordPress des del terminal. A la primera captura es veu com el descarregue amb `curl`, li done permisos d'execució i el moc a `/usr/local/bin/wp`. A la segona, `wp --info` mostra que funciona i que detecta PHP 8.3.6 i MariaDB 10.11.
 
 L'avantatge respecte a `wp-admin` és que ho puc fer tot per SSH sense navegador, és més ràpid i les ordres es poden posar en scripts per a automatitzar tasques.
 
@@ -28,7 +28,7 @@ L'avantatge respecte a `wp-admin` és que ho puc fer tot per SSH sense navegador
 
 ![E2 login](imatges/E2c.png)
 
-He treballat amb el plugin `wps-hide-login`. A la primera captura es veu com l'instal·lo i l'activo amb `wp plugin install wps-hide-login --activate`, com canvie la ruta d'accés amb `wp option update whl_page "acces-porconstech"` i el `wp plugin list` amb el plugin en estat `active`. El missatge `option is unchanged` ix perquè aquesta opció ja l'havia configurada abans en una prova anterior. Al final també l'he desactivat, activat, actualitzat i eliminat per a veure el cicle complet.
+He treballat amb el plugin `wps-hide-login`. A la primera captura es veu com l'instal·le i l'active amb `wp plugin install wps-hide-login --activate`, com canvie la ruta d'accés amb `wp option update whl_page "acces-porconstech"` i el `wp plugin list` amb el plugin en estat `active`. El missatge `option is unchanged` ix perquè aquesta opció ja l'havia configurada abans en una prova anterior. Al final també l'he desactivat, activat, actualitzat i eliminat per a veure el cicle complet.
 
 Per a comprovar que de veres funcionava ho he provat al navegador (segona captura): entrant a `/wp-admin` m'enviava a la portada amb `?404`, i en canvi `/acces-porconstech` em mostrava el login.
 
@@ -107,12 +107,12 @@ Per a veure que tot seguia funcionant he fet `wp core version`, `wp db check` (t
 | Permet traslladar continguts | Sí, però poc pràctic | Sí |
 | Serveix per recuperar tot el lloc després d'una avaria | Sí | No |
 
-- A (servidor avariat): backup, perquè té fitxers i base de dades.
-- B (passar les entrades a un altre WordPress): exportació WXR.
-- C (conservar plugins, temes, configuració i base de dades): backup.
-- D (copiar només alguns continguts): exportació WXR, perquè es poden triar amb `--post__in`.
+- **A (servidor avariat):** backup, perquè té fitxers i base de dades.
+- **B (passar les entrades a un altre WordPress):** exportació WXR.
+- **C (conservar plugins, temes, configuració i base de dades):** backup.
+- **D (copiar només alguns continguts):** exportació WXR, perquè es poden triar amb `--post__in`.
 
-Sobre els formats: el WXR/XML és el millor per a migrar entre WordPress, el CSV per a obrir-lo en un full de càlcul i el JSON per a què el use una aplicació.
+Sobre els formats: el WXR/XML és el millor per a migrar entre WordPress, el CSV per a obrir-lo en un full de càlcul i el JSON perquè el puga utilitzar una aplicació.
 
 ### RSS (pas 9)
 
@@ -121,6 +121,5 @@ He comprovat el feed amb `curl` a `https://3.223.239.190/wordpress/feed/` i he c
 ### Informe d'accessos (pas 10)
 
 Està al fitxer [`informe-accessos.txt`](informe-accessos.txt).
-
 
 **7. Anàlisi d'accessos.** Del `access.log` es pot traure la IP del client, la data i hora, el mètode i el recurs que demana, i el codi de resposta. A l'administrador li serveix per a detectar errors (molts 404, per exemple), veure quines pàgines es visiten més i detectar coses sospitoses, com molts intents sobre `/wp-login.php` o `/wp-admin`. Les IP són dades personals i cal tractar-les segons la normativa de protecció de dades.

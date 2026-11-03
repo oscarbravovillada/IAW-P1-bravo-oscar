@@ -46,15 +46,10 @@ SIGNIFICAT DELS CODIS HTTP PRINCIPALS
 302  Redirecció temporal.
 304  No modificat: el navegador usa la còpia en memòria cau.
 404  Recurs no trobat.
-
-5. CONCLUSIONS
-Els logs d'Apache permeten saber qui accedeix al servidor (IP), quins
-recursos consulta, a quina hora i amb quina resposta. Això ajuda a:
+ CONCLUSIONS
 - detectar errors, per exemple rutes que retornen 404;
 - detectar accessos sospitosos, com intents repetits sobre /wp-login.php
   o /wp-admin, o IP amb un nombre anormal de peticions;
 - conéixer quines pàgines són les més visitades;
 - comprovar que les configuracions fetes (enllaços permanents, plugins)
   funcionen.
-Les IP són dades personals, per la qual cosa cal tractar-les segons la
-normativa de protecció de dades.

@@ -122,20 +122,5 @@ He comprovat el feed amb `curl` a `https://3.223.239.190/wordpress/feed/` i he c
 
 Està al fitxer [`informe-accessos.txt`](informe-accessos.txt).
 
----
-
-## Tasques finals
-
-**1. WP-CLI.** Dos avantatges: es poden automatitzar tasques amb scripts, i es pot administrar el servidor per SSH sense interfície gràfica, de forma més ràpida que amb el panell.
-
-**2. Plugins.** Per a incorporar una funcionalitat nova: el instal·laria amb `wp plugin install NOM`, l'activaria amb `wp plugin activate NOM`, miraria amb `wp plugin list` que està actiu i provaria que funciona al navegador, l'actualitzaria amb `wp plugin update NOM`, i si ja no fa falta el desactivaria i l'eliminaria amb `wp plugin delete NOM`.
-
-**3. Usuaris.** L'administradora del sistema seria Administrador, perquè ha de gestionar tot el lloc. La persona que revisa i publica continguts seria Editor, perquè pot publicar i editar les entrades d'altres però no toca plugins ni usuaris. La que només publica les seues entrades seria Autor. Així cadascú té només els permisos que necessita.
-
-**4. Actualitzacions.** S'han d'actualitzar WordPress, plugins i temes per seguretat, per corregir errors i per mantindre la compatibilitat. Abans d'una actualització important faria un backup, miraria que els plugins i el tema són compatibles amb la versió nova i que la versió de PHP del servidor val, i si pogués ho provaria abans en un entorn de proves.
-
-**5. Backup i exportació.** La còpia de seguretat completa té fitxers i base de dades i serveix per a recuperar tot el lloc si falla el servidor. L'exportació WXR només porta continguts (entrades, pàgines, autors) i serveix per a passar-los a un altre WordPress. El CSV i el JSON són només dades: el CSV va bé per a analitzar-les en un full de càlcul i el JSON perquè les use una aplicació.
-
-**6. Sindicació.** Un canal RSS és un XML que WordPress genera amb les últimes entrades publicades, i està a `/feed/`. Una altra aplicació, com un lector RSS o un altre web, pot consultar-lo cada cert temps i veure les novetats de PorçonsTech sense copiar-les a mà.
 
 **7. Anàlisi d'accessos.** Del `access.log` es pot traure la IP del client, la data i hora, el mètode i el recurs que demana, i el codi de resposta. A l'administrador li serveix per a detectar errors (molts 404, per exemple), veure quines pàgines es visiten més i detectar coses sospitoses, com molts intents sobre `/wp-login.php` o `/wp-admin`. Les IP són dades personals i cal tractar-les segons la normativa de protecció de dades.

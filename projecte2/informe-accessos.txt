@@ -1,0 +1,60 @@
+INFORME D'ACCESSOS · PORÇONSTECH
+Data: Tue Nov  3 10:42:50 UTC 2026
+Fitxer analitzat: /var/log/apache2/access.log
+Total de peticions: 248
+
+1. IP AMB MÉS PETICIONS (nombre d'accessos i IP)
+    236 213.0.87.115
+     12 ::1
+
+2. RECURSOS MÉS SOL·LICITATS
+     17 /wordpress/wp-admin/admin-ajax.php
+     12 *
+      8 /wordpress/wp-includes/js/wp-emoji-release.min.js?ver=7.1.4
+      8 /wordpress/wp-includes/js/dist/script-modules/interactivity/index.min.js?ver=6a43cba92ed701f32cd9
+      8 /wordpress/wp-includes/js/dist/script-modules/block-library/navigation/view.min.js?ver=1bf28ded04f9f188bdcb
+      7 /wordpress/wp-admin/
+      7 /wordpress/
+      6 /wordpress/wp-json/wp/v2/users/me?context=edit&_locale=user
+      6 /wordpress/hello-world/
+      5 /wordpress/wp-includes/blocks/navigation/style.min.css?ver=7.1.4
+
+3. CODIS HTTP DETECTATS (nombre i codi)
+    219 200
+     11 404
+      8 302
+      6 301
+      2 304
+      2 "-"
+
+4. ERRORS 404 (primeres 10 peticions)
+213.0.87.115 /wordpress/acces-porconstech
+213.0.87.115 /favicon.ico
+213.0.87.115 /wordpress/acces-porconstech
+213.0.87.115 /wordpress/acces-porconstech
+213.0.87.115 /favicon.ico
+213.0.87.115 /wordpress/hello-world/
+213.0.87.115 /wordpress/hello-world/
+213.0.87.115 /wordpress/hello-world/
+213.0.87.115 /wordpress/hello-world/
+213.0.87.115 /favicon.ico
+Total de 404: 11
+
+SIGNIFICAT DELS CODIS HTTP PRINCIPALS
+200  OK: la petició s'ha resolt correctament.
+301  Redirecció permanent a una altra URL.
+302  Redirecció temporal.
+304  No modificat: el navegador usa la còpia en memòria cau.
+404  Recurs no trobat.
+
+5. CONCLUSIONS
+Els logs d'Apache permeten saber qui accedeix al servidor (IP), quins
+recursos consulta, a quina hora i amb quina resposta. Això ajuda a:
+- detectar errors, per exemple rutes que retornen 404;
+- detectar accessos sospitosos, com intents repetits sobre /wp-login.php
+  o /wp-admin, o IP amb un nombre anormal de peticions;
+- conéixer quines pàgines són les més visitades;
+- comprovar que les configuracions fetes (enllaços permanents, plugins)
+  funcionen.
+Les IP són dades personals, per la qual cosa cal tractar-les segons la
+normativa de protecció de dades.

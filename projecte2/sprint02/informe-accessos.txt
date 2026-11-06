@@ -1,0 +1,26 @@
+INFORME D'ACCESSOS · PORÇONSTECH
+Oscar Bravo Villada · IAW
+
+He mirat el fitxer /var/log/apache2/access.log del servidor, que té 116 peticions en total.
+
+1. IP amb més peticions
+La que més apareix és la 213.0.87.xxx, amb 112 peticions (quasi el 97 %). Supose que és la meua, perquè és des d'on he fet totes les proves amb el navegador. Després ixen 127.0.0.1 amb 2 peticions, que són els curl que he fet al feed des del propi servidor, i ::1 amb altres 2, que crec que són connexions internes d'Apache.
+
+2. Recursos més sol·licitats
+- /wordpress/wp-admin/admin-ajax.php: 8 vegades. Són peticions que fa el panell d'administració per darrere mentre l'uses.
+- /wordpress/wp-login.php, /wordpress/feed/, /favicon.ico i /acces-porconstech: 2 vegades cadascun.
+- La resta (scripts JS de wp-includes i l'API wp-json) només 1 vegada.
+Pel que es veu, la major part de l'activitat és de quan he estat dins del panell.
+
+3. Codis HTTP que han eixit
+- 200 (109 vegades): tot correcte.
+- 404 (4): la pàgina no existeix.
+- 304 (1): no ha canviat, el navegador reutilitza la còpia que ja tenia.
+- 302 (1): redirecció temporal.
+- 301 (1): redirecció permanent.
+
+4. Errors
+Només he trobat els 404, que són 4. Dos són de /acces-porconstech i /wordpress/acces-porconstech: vaig intentar entrar per eixa adreça després d'haver eliminat el plugin wps-hide-login, així que ja no existia. Els altres dos són de favicon.ico, perquè el lloc no té icona. No he vist cap error 500.
+
+5. Conclusions
+Mirant el log pots saber qui entra al servidor, a quina hora, què demana i què li respon Apache. En el meu cas tot és activitat meua i no he vist res estrany: només dues peticions a wp-login.php i totes del mateix client. Els 404 serveixen per a detectar enllaços trencats o coses que falten, i els recursos més demanats ensenyen quines parts del lloc es fan més servir. En un servidor de veritat, si veiem moltes peticions a wp-login.php o wp-admin des de la mateixa IP, podria ser un atac de força bruta. A més, les IP són dades personals i s'han de tractar segons la normativa de protecció de dades.

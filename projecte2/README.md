@@ -34,7 +34,7 @@ Per a comprovar que de veres funcionava ho he provat al navegador (segona captur
 
 ---
 
-## E3 · Temes
+## E3 · Themes
 
 ![E3 terminal](imatges/E3.png)
 
@@ -50,7 +50,7 @@ Per a saber quin tema està actiu es fa wp theme list i es mira la columna statu
 
 ![E4](imatges/E4.png)
 
-A la captura es veuen wp core version (7.1.4), wp core check-update, wp core update, wp plugin list, wp plugin update --all, wp theme list i wp theme update --all. WordPress ja estava a l'última versió i no hi havia res pendent en plugins ni temes, per això els missatges diuen "up to date" i "already updated".
+A la captura es veuen wp core version (7.1.4), wp core check-update, wp core update, wp plugin list, wp plugin update --all, wp theme list i wp theme update --all. WordPress ja estava a l'última versió i no hi havia res pendent en plugins ni Themes, per això els missatges diuen "up to date" i "already updated".
 
 És important actualitzar-ho tot perquè les versions noves arreglen errors i sobretot problemes de seguretat. Un plugin o tema antic és de les maneres més fàcils d'entrar en un WordPress.
 
@@ -87,13 +87,13 @@ Per a veure que tot seguia funcionant he fet wp core version, wp db check (totes
 | Editar entrades d'altres usuaris | Sí | Sí | No |
 | Instal·lar plugins | Sí | No | No |
 | Gestionar usuaris | Sí | No | No |
-| Modificar temes | Sí | No | No |
+| Modificar Themes | Sí | No | No |
 
 ### Backup (pas 7)
 
 1. Guardar només /var/www/html no val perquè els continguts (entrades, pàgines, usuaris) estan a la base de dades.
 2. Sense la base de dades perdríem totes les entrades, pàgines, usuaris i la configuració del lloc.
-3. Si només tinguérem la base de dades perdríem els temes, plugins, imatges pujades i el wp-config.php.
+3. Si només tinguérem la base de dades perdríem els Themes, plugins, imatges pujades i el wp-config.php.
 4. Els backups han d'estar fora de /var/www/html perquè eixa carpeta és pública i algú podria descarregar-los des del navegador, i perquè si el servidor falla es perdrien amb ell.
 
 ### Backup o exportació (pas 8)
@@ -102,14 +102,14 @@ Per a veure que tot seguia funcionant he fet wp core version, wp db check (totes
 |---|---|---|
 | Inclou la base de dades completa | Sí | No |
 | Inclou plugins | Sí | No |
-| Inclou temes | Sí | No |
+| Inclou Themes | Sí | No |
 | Inclou entrades i pàgines | Sí | Sí |
 | Permet traslladar continguts | Sí, però poc pràctic | Sí |
 | Serveix per recuperar tot el lloc després d'una avaria | Sí | No |
 
 - **A (servidor avariat):** backup, perquè té fitxers i base de dades.
 - **B (passar les entrades a un altre WordPress):** exportació WXR.
-- **C (conservar plugins, temes, configuració i base de dades):** backup.
+- **C (conservar plugins, Themes, configuració i base de dades):** backup.
 - **D (copiar només alguns continguts):** exportació WXR, perquè es poden triar amb --post__in.
 
 Sobre els formats: el WXR/XML és el millor per a migrar entre WordPress, el CSV per a obrir-lo en un full de càlcul i el JSON perquè el puga utilitzar una aplicació.

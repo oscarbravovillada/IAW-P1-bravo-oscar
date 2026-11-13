@@ -1,6 +1,5 @@
 # Projecte 2 · Sprint 3 · Adaptar WordPress
 
-**Oscar Bravo Villada · IAW · PorçonsTech**
 
 En aquest sprint he adaptat WordPress tocant codi, però sense modificar el tema original: he creat un tema fill amb un canvi d'estil i un shortcode propi. Recorde que el WordPress no està a /var/www/html sinó a /var/www/html/wordpress, perquè a /var/www/html ja tenia una altra aplicació PHP. Per això totes les rutes porten la subcarpeta. La versió de WordPress és la 7.1.4.
 
@@ -16,10 +15,10 @@ Primer he entrat per SSH i he fet `ls` a /var/www/html/wordpress i després dins
 
 | Element | Per a què serveix |
 |---|---|
-| `wp-content/themes` | Hi estan els temes instal·lats, que són els que decideixen l'aspecte del lloc. |
-| `wp-content/plugins` | Hi estan els plugins, que afegeixen funcions que WordPress no porta de sèrie. |
-| `wp-content/uploads` | Guarda el que pugem des de WordPress: imatges, documents, etc. |
-| `wp-config.php` | És la configuració principal: la connexió a la base de dades, les claus de seguretat i el prefix de les taules. |
+| wp-content/themes | Hi estan els temes instal·lats, que són els que decideixen l'aspecte del lloc. |
+| wp-content/plugins | Hi estan els plugins, que afegeixen funcions que WordPress no porta de sèrie. |
+| wp-content/uploads | Guarda el que pugem des de WordPress: imatges, documents, etc. |
+| wp-config.php | És la configuració principal: la connexió a la base de dades, les claus de seguretat i el prefix de les taules. |
 
 ---
 

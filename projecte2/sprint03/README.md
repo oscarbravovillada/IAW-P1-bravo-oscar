@@ -10,7 +10,7 @@ Les captures estan a la carpeta imatges/.
 
 ## 1. Estructura de WordPress
 
-![Estructura de wp-content](imatges/s3_1_estructura.png)
+![Estructura de wp-content](imatges/E1.png)
 
 Primer he entrat per SSH i he fet `ls` a /var/www/html/wordpress i després dins de wp-content. Allà es veuen wp-admin, wp-content, wp-includes i wp-config.php, i dins de wp-content les carpetes plugins i themes.
 
@@ -25,7 +25,7 @@ Primer he entrat per SSH i he fet `ls` a /var/www/html/wordpress i després dins
 
 ## 2. Quin és el tema actiu
 
-![Tema actiu](imatges/s3_2_tema-actiu.png)
+![Tema actiu](imatges/E2.png)
 
 Amb `wp theme list` he mirat quin tema estava en estat active, i era **twentytwentyfive**. Eixe nom (el slug) és el que he de posar després en el tema fill, no el nom que es veu al panell.
 
@@ -42,7 +42,7 @@ Amb `wp theme list` he mirat quin tema estava en estat active, i era **twentytwe
 
 ## 4. El tema fill i el style.css
 
-![Directori i style.css](imatges/s3_3_style-css.png)
+![Directori i style.css](imatges/E3.png)
 
 He creat la carpeta del tema fill dins de themes:
 
@@ -74,7 +74,7 @@ Version: 1.0
 
 ## 5. El functions.php
 
-![functions.php](imatges/s3_4_functions-php.png)
+![functions.php](imatges/E4.png)
 
 ```php
 <?php
@@ -112,7 +112,7 @@ El style.css s'ocupa de l'aspecte: defineix la classe `.porconstech-destacat` am
 
 ## 6. Activar el tema fill
 
-![Tema fill actiu](imatges/s3_5_tema-fill-actiu.png)
+![Tema fill actiu](imatges/E5.png)
 
 ```bash
 cd /var/www/html/wordpress
@@ -127,7 +127,7 @@ Abans d'activar-lo ja apareixia a la llista com a inactive, i després de l'acti
 
 ## 7. Provar el shortcode
 
-![Shortcode funcionant](imatges/s3_6_shortcode.png)
+![Shortcode funcionant](imatges/E6.png)
 
 Per a provar-lo he creat una pàgina des del terminal amb el shortcode dins:
 
@@ -143,9 +143,9 @@ També he comprovat que la resta continua bé: la portada es veu amb les entrade
 
 ## 8. La meua modificació
 
-![Modificació aplicada](imatges/s3_7_modificacio.png)
+![Modificació aplicada](imatges/E7.png)
 
-![Codi després del canvi](imatges/s3_8_codi-final.png)
+![Codi després del canvi](imatges/E8.png)
 
 Per a la modificació pròpia he fet dos canvis xicotets, cadascun en el fitxer que toca. En el functions.php he afegit una segona línia al missatge, i en el style.css he canviat la vora a discontínua i amb les cantonades arredonides.
 
